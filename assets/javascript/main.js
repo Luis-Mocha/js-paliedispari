@@ -1,3 +1,4 @@
+/* --PAROLE PALINDROME */
 const main = document.querySelector('main')
 let titleDiv = document.createElement('div')
 main.append(titleDiv)
@@ -56,3 +57,49 @@ function myReverseString(x) {
 
     return reversedString;
 }
+
+
+/* -- PARI E DISPARI */
+// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+// Sommiamo i due numeri
+// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+// Dichiariamo chi ha vinto.
+
+let userChoice = 'dispari';
+
+let userNumber = randomNumber(1, 5);
+let computerNumber = randomNumber(1, 5);
+console.log(userNumber, computerNumber);
+
+let summedNumbers = addNumbers(userNumber, computerNumber)
+console.log(summedNumbers);
+
+let finalResult = evenOrOdd(summedNumbers);
+console.log(finalResult);
+
+if (userChoice == finalResult) {
+    console.log('hai vinto!')
+} else {
+    console.log('hai perso!')
+};
+
+
+// Funzione per generare un numero casuale
+function randomNumber(min, max) {
+    return Math.floor( Math.random() * max + min );        
+};
+// Funzione per sommare i due numeri casuali
+function addNumbers(a, b) {
+    return (a + b)       
+};
+//Funzione per capire se è dispari o pari
+function evenOrOdd(x) {
+    if (x % 2 == 0) {
+        return 'pari'
+    }
+    else {
+        return 'dispari'
+    }
+};
+
