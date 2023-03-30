@@ -70,7 +70,7 @@ formPariDispari.addEventListener('submit', function(invioForm) {
 
     let userChoice = document.getElementById('select-pariDispari').value;
 
-    let userNumber = randomNumber(1, 5);
+    let userNumber = parseInt( document.getElementById('inputNumber').value );
     let computerNumber = randomNumber(1, 5);
     console.log(userNumber, computerNumber);
 
@@ -86,7 +86,7 @@ formPariDispari.addEventListener('submit', function(invioForm) {
         <li class="my-4">
             Hai scelto <span class="text-decoration-underline text-success">${userChoice}</span> e hai vinto!
             <br>
-            I numeri casuali sono stati ${userNumber} e ${computerNumber}. La Loro somma è ${summedNumbers}: <span class="text-decoration-underline text-success">${finalResult}</span>!
+            Il tuo numero è stato ${userNumber}, quello del computer ${computerNumber}. La Loro somma è ${summedNumbers}: <span class="text-decoration-underline text-success">${finalResult}</span>!
         </li>
         `
 
@@ -96,10 +96,11 @@ formPariDispari.addEventListener('submit', function(invioForm) {
         <li class="my-4">
         Hai scelto <span class="text-decoration-underline text-warning">${userChoice}</span> e hai perso! 
         <br>
-        I numeri casuali sono stati ${userNumber} e ${computerNumber}. La Loro somma è ${summedNumbers}: <span class="text-decoration-underline text-danger">${finalResult}</span> :(
+        Il tuo numero è stato ${userNumber}, quello del computer ${computerNumber}. La Loro somma è ${summedNumbers}: <span class="text-decoration-underline text-danger">${finalResult}</span> :(
         </li>
         `
     };
+    
 });
 
 

@@ -44,12 +44,24 @@
                 Scommetti su pari o dispari. Saranno scelti due numeri da 1 a 5 e se la loro somma sarà uguale alla tua scelta allora avrai vinto!
             </p>
 
-            <select id="select-pariDispari" class="my-2 fs-5" aria-label="Input pari o dispari">
+            <label for="inputNumber" class="mb-2 me-2">
+                Scegli il tuo numero compreso tra 1 e 5:
+            </label>
+            <input type="number" id="inputNumber" class=" mb-4" min="1" max="5" maxlength="1" required>
+
+            <br>
+
+            <label for="select-pariDispari" >
+                Scommetti su
+            </label>
+            <select id="select-pariDispari" class="fs-5 ms-3 mb-4" aria-label="Input pari o dispari">
                 <option value="pari">Pari</option>
                 <option value="dispari">Dispari</option>
             </select>
 
-            <button id="ButtonPariDispari" class=" ms-3 btn btn-primary">
+            <br>
+
+            <button id="ButtonPariDispari" class="d-block mx-auto btn btn-primary">
                 Tenta la fortuna
             </button>
         </form>
