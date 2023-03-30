@@ -2,11 +2,12 @@ const main = document.querySelector('main')
 let titleDiv = document.createElement('div')
 main.append(titleDiv)
 
-
+const form = document.querySelector('form');
 const sendButton = document.querySelector('#sendButton');
 
 
-sendButton.addEventListener('click', function() {
+form.addEventListener('submit', function(invioForm) {
+    invioForm.preventDefault();
 
     let userWord = document.querySelector('#inputWord').value;
     console.log(userWord);
@@ -19,7 +20,7 @@ sendButton.addEventListener('click', function() {
     if (userWord == reversedWord){
 
         titleDiv.innerHTML += `
-        <h2>
+        <h2 class="border p-1 mb-2">
         <i class="fa-solid fa-check" style="color: #00ff1e;"></i>
         <span class="text-uppercase fst-italic text-success">${userWord}</span> è una parola palindroma!
         </h2>
@@ -28,15 +29,17 @@ sendButton.addEventListener('click', function() {
     } else {
 
         titleDiv.innerHTML += `
-        <h2>
+        <h2 class="border p-1 mb-2">
         <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
-        <span class="text-uppercase fst-italic text-danger">${userWord}</span> non è una parola palindroma.
+        <span class=" fst-italic text-danger">${userWord}</span> non è una parola palindroma.
         <br>
-        Al contrario si legge <span class="text-uppercase fst-italic text-warning">${reversedWord}</span>.
+        Al contrario si legge <span class=" fst-italic text-warning">${reversedWord}</span>.
         </h2>
         `
 
     }
+
+    form.reset ();
 })
 
 
