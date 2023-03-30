@@ -1,13 +1,11 @@
 /* --PAROLE PALINDROME */
-const main = document.querySelector('main')
+const formPalindromo = document.querySelector('#form-palindromo');
+
 let titleDiv = document.createElement('div')
-main.append(titleDiv)
-
-const form = document.querySelector('form');
-const sendButton = document.querySelector('#sendButton');
+formPalindromo.append(titleDiv)
 
 
-form.addEventListener('submit', function(invioForm) {
+formPalindromo.addEventListener('submit', function(invioForm) {
     invioForm.preventDefault();
 
     let userWord = document.querySelector('#inputWord').value;
@@ -40,7 +38,7 @@ form.addEventListener('submit', function(invioForm) {
 
     }
 
-    form.reset ();
+    formPalindromo.reset ();
 })
 
 
@@ -66,23 +64,50 @@ function myReverseString(x) {
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
 
-let userChoice = 'dispari';
+const formPariDispari = document.getElementById('form-pariDispari')
+const ulList = document.createElement('ul');
+formPariDispari.append(ulList);
 
-let userNumber = randomNumber(1, 5);
-let computerNumber = randomNumber(1, 5);
-console.log(userNumber, computerNumber);
+// let userChoice = 'dispari';
 
-let summedNumbers = addNumbers(userNumber, computerNumber)
-console.log(summedNumbers);
+formPariDispari.addEventListener('submit', function(invioForm) {
+    invioForm.preventDefault();
 
-let finalResult = evenOrOdd(summedNumbers);
-console.log(finalResult);
+    let userChoice = document.getElementById('select-pariDispari').value;
 
-if (userChoice == finalResult) {
-    console.log('hai vinto!')
-} else {
-    console.log('hai perso!')
-};
+    let userNumber = randomNumber(1, 5);
+    let computerNumber = randomNumber(1, 5);
+    console.log(userNumber, computerNumber);
+
+    let summedNumbers = addNumbers(userNumber, computerNumber)
+    console.log(summedNumbers);
+
+    let finalResult = evenOrOdd(summedNumbers);
+    console.log(finalResult);
+
+    if (userChoice == finalResult) {
+        // console.log('hai vinto!')
+        ulList.innerHTML += `
+        <li class="my-4">
+            Hai scelto <span class="text-decoration-underline text-success">${userChoice}</span> e hai vinto!
+            <br>
+            I numeri casuali sono stati ${userNumber} e ${computerNumber}. La Loro somma è ${summedNumbers}: <span class="text-decoration-underline text-success">${finalResult}</span>!
+        </li>
+        `
+
+    } else {
+        // console.log('hai perso!')
+        ulList.innerHTML += `
+        <li class="my-4">
+        Hai scelto <span class="text-decoration-underline text-warning">${userChoice}</span> e hai perso! 
+        <br>
+        I numeri casuali sono stati ${userNumber} e ${computerNumber}. La Loro somma è ${summedNumbers}: <span class="text-decoration-underline text-danger">${finalResult}</span> :(
+        </li>
+        `
+    };
+});
+
+
 
 
 // Funzione per generare un numero casuale

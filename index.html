@@ -15,15 +15,42 @@
 </head>
 <body>
 
-    <main class="container py-5">
-        <form class="row px-4">
+    <main class="container">
+        <form id="form-palindromo" class="row px-4 my-5">
+            <h2 class="text-center text-uppercase">
+                è una parola palindroma?
+            </h2>
+            <p class="text-center">
+                Inserisci una parola e primi "INVIA" per scoprire se è palindroma.
+            </p>
+
             <label for="inputWord" class="mb-2 p-0">
                 Inserisci la tua parola:
             </label>
             <input type="text" id="inputWord" class="mb-4 col-md-6" required>
 
-            <button id="sendButton" class="text-uppercase p-0 mb-4 w-25 ms-md-4 btn btn-success">
+            <button id="buttonPalindromo" class="text-uppercase p-0 mb-4 w-25 ms-md-4 btn btn-success">
                 invia
+            </button>
+        </form>
+
+        <hr>
+
+        <form id="form-pariDispari" class="my-5 ">
+            <h2 class="text-center text-uppercase">
+                Pari o Dispari?
+            </h2>
+            <p class="text-center">
+                Scommetti su pari o dispari. Saranno scelti due numeri da 1 a 5 e se la loro somma sarà uguale alla tua scelta allora avrai vinto!
+            </p>
+
+            <select id="select-pariDispari" class="my-2 fs-5" aria-label="Input pari o dispari">
+                <option value="pari">Pari</option>
+                <option value="dispari">Dispari</option>
+            </select>
+
+            <button id="ButtonPariDispari" class=" ms-3 btn btn-primary">
+                Tenta la fortuna
             </button>
         </form>
     </main>
