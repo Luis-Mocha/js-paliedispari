@@ -18,11 +18,23 @@ sendButton.addEventListener('click', function() {
 
     if (userWord == reversedWord){
 
-        titleDiv.innerHTML += `<h2>- <span class="text-uppercase text-success">${userWord}</span> è una parola palindroma!</h2>`
+        titleDiv.innerHTML += `
+        <h2>
+        <i class="fa-solid fa-check" style="color: #00ff1e;"></i>
+        <span class="text-uppercase fst-italic text-success">${userWord}</span> è una parola palindroma!
+        </h2>
+        `
 
     } else {
 
-        titleDiv.innerHTML += `<h2>- <span class="text-uppercase text-danger">${userWord}</span> non è una parola palindroma. <br> Al contrario risulta <span class="text-uppercase text-warning">${reversedWord}</span>.</h2>`
+        titleDiv.innerHTML += `
+        <h2>
+        <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
+        <span class="text-uppercase fst-italic text-danger">${userWord}</span> non è una parola palindroma.
+        <br>
+        Al contrario si legge <span class="text-uppercase fst-italic text-warning">${reversedWord}</span>.
+        </h2>
+        `
 
     }
 })
