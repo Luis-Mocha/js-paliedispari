@@ -107,7 +107,7 @@ formPariDispari.addEventListener('submit', function(invioForm) {
 
 // Funzione per generare un numero casuale
 function randomNumber(min, max) {
-    return Math.floor( Math.random() * max + min );        
+    return Math.floor( Math.random() * (max - min + 1) + min );        
 };
 // Funzione per sommare i due numeri casuali
 function addNumbers(a, b) {
